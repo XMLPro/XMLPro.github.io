@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>XMLPro</title>
+    <link>https://xmlpro.github.io/</link>
+    <description>Recent content on XMLPro</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2020 15:00:14 +0900</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-JP</language>
+    <lastBuildDate>Sun, 04 Oct 2020 15:00:14 +0900</lastBuildDate><atom:link href="https://xmlpro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>http://example.org/posts/test/</link>
+      <link>https://xmlpro.github.io/posts/test/</link>
       <pubDate>Sun, 04 Oct 2020 15:00:14 +0900</pubDate>
       
-      <guid>http://example.org/posts/test/</guid>
+      <guid>https://xmlpro.github.io/posts/test/</guid>
       <description>h1 hello</description>
     </item>
     
