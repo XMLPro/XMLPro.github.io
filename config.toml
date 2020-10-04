@@ -1,0 +1,36 @@
+baseURL = "https://xmlpro.github.io"
+languageCode = "ja-JP"
+title = "XMLPro"
+theme = "ananke"
+themesDir = "themes"
+
+DefaultContentLanguage = "ja"
+SectionPagesMenu = "main"
+Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  favicon = ""
+  twitter = "https://twitter.com/xmlpro_tut"
+  github = "https://github.com/XMLPro"
+
+  background_color_class = "bg-black"
+  recent_posts_number = 5
+  recent_copy = "最近の投稿"
+  featured_image = "/images/header.jpg"
+  mainSections = ["posts"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

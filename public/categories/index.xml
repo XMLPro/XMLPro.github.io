@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on XMLPro</title>
+    <link>https://xmlpro.github.io/categories/</link>
+    <description>Recent content in Categories on XMLPro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Sun, 04 Oct 2020 15:00:14 +0900</lastBuildDate><atom:link href="https://xmlpro.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ごりら</title>
+      <link>https://xmlpro.github.io/categories/%E3%81%94%E3%82%8A%E3%82%89/</link>
+      <pubDate>Sun, 04 Oct 2020 15:00:14 +0900</pubDate>
+      
+      <guid>https://xmlpro.github.io/categories/%E3%81%94%E3%82%8A%E3%82%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ばなな</title>
+      <link>https://xmlpro.github.io/categories/%E3%81%B0%E3%81%AA%E3%81%AA/</link>
+      <pubDate>Sun, 04 Oct 2020 15:00:14 +0900</pubDate>
+      
+      <guid>https://xmlpro.github.io/categories/%E3%81%B0%E3%81%AA%E3%81%AA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
