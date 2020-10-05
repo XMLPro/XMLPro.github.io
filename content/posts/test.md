@@ -1,10 +1,16 @@
 ---
 title: "Test"
-date: 2020-10-05T00:25:54+09:00
-categories: [ "banana", "gorilla" ]
+date: "2020-10-05"
+description: "test post"
+categories:
+  - "banana"
+  - "gorilla"
+thumbnail: ""
+comments: true
+authorbox: true
+pager: true
+toc: true
+mathjax: true
+sidebar: true
 draft: true
 ---
-
-# H1
-
-hello
