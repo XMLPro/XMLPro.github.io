@@ -53,7 +53,7 @@ git pull origin master
 
 ### 書いた記事のローカルでの確認
 
-`hugo server -D`で(localhost:1313)[localhost:1313]にローカルサーバーがたつのでそこで表示を確認してください。
+`hugo server -D`で[localhost:1313](localhost:1313)にローカルサーバーがたつのでそこで表示を確認してください。
 
 ## デプロイ
 
@@ -65,4 +65,4 @@ git push origin 自分のブランチ名
 
 あとはmasterブランチに向けてPRをだし、誰かにレビューをしてもらいましょう。
 
-masterブランチにマージすると、(https://xmlpro.github.io)[https://xmlpro.github.io]が更新されます。
+masterブランチにマージすると、[https://xmlpro.github.io](https://xmlpro.github.io)が更新されます。
