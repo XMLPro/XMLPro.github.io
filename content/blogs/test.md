@@ -24,6 +24,6 @@ widgets: # サイドバーの表示項目
 draft: true # 記事を公開する場合trueに設定してください
 ---
 
-# title
+# example blog
 
 description
