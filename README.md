@@ -2,13 +2,13 @@
 
 ## リポジトリのクローン(初回のみ)
 ```bash
-git clone https://github.com/XMLPro/XMLPro.github.io
+git clone https://github.com/XMLPro/XMLPro.github.io --recursive
 ```
 
 ##  hugoのインストール
 
 公式のドキュメントを参考にローカルにhugoをインストールしてください
-(https://gohugo.io/getting-started/installing/)[https://gohugo.io/getting-started/installing/]
+[https://gohugo.io/getting-started/installing/](https://gohugo.io/getting-started/installing/)
 
 
 ## ブランチの用意
@@ -36,7 +36,7 @@ git pull origin master
 ### ブログ
 
 ```bash
-./new.sh blogs  
+./new.sh blogs
 ```
 
 ### XMLProに関するニュース
