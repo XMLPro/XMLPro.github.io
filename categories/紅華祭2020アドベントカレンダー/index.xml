@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>XMLPro</title>
-    <link>https://xmlpro.github.io/</link>
-    <description>Recent content on XMLPro</description>
+    <title>紅華祭2020アドベントカレンダー on XMLPro</title>
+    <link>https://xmlpro.github.io/categories/%E7%B4%85%E8%8F%AF%E7%A5%AD2020%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/</link>
+    <description>Recent content in 紅華祭2020アドベントカレンダー on XMLPro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/categories/%E7%B4%85%E8%8F%AF%E7%A5%AD2020%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trend Micro CTF 2020に出た話</title>
       <link>https://xmlpro.github.io/posts/2020-10-13-1456/</link>
