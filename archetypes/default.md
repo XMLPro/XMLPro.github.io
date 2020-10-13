@@ -21,7 +21,7 @@ widgets: # サイドバーの表示項目
   - "search"
   - "recent"
   - "taglist"
-draft: true # 記事を公開する場合trueに設定してください
+draft: true # 記事を公開する場合falseに設定してください
 ---
 
 # title
