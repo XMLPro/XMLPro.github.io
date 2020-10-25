@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flutter on XMLPro</title>
+    <link>https://xmlpro.github.io/tags/flutter/</link>
+    <description>Recent content in Flutter on XMLPro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FlutterのHybrid Compositionを使った話</title>
+      <link>https://xmlpro.github.io/posts/2020-10-24-1516/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/posts/2020-10-24-1516/</guid>
+      <description>はじめに สวัสดีตอนเช้า🙏。みんなだいすき部長1の箱守由ですっ☆。今日はみんなと一緒にブログを書いていくよ！2 みんなが何日目をやる</description>
+    </item>
+    
+  </channel>
+</rss>

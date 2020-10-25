@@ -8,13 +8,21 @@
     <language>ja-JP</language>
     <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>FlutterのHybrid Compositionを使った話</title>
+      <link>https://xmlpro.github.io/posts/2020-10-24-1516/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/posts/2020-10-24-1516/</guid>
+      <description>はじめに สวัสดีตอนเช้า🙏。みんなだいすき部長1の箱守由ですっ☆。今日はみんなと一緒にブログを書いていくよ！2 みんなが何日目をやる</description>
+    </item>
+    
+    <item>
       <title>Trend Micro CTF 2020に出た話</title>
       <link>https://xmlpro.github.io/posts/2020-10-13-1456/</link>
       <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://xmlpro.github.io/posts/2020-10-13-1456/</guid>
-      <description>Trend Micro CTF 2020に出た話 はてブロに書いちゃった はてなブログに書いちゃったのでそっち見てください。 移植はbatファイル書いてたら時間無くなりました。
-Trend Micro CTF 2020に出た話 - はてなブログ</description>
+      <description>Trend Micro CTF 2020に出た話 はてブロに書いちゃった はてなブログに書いちゃったのでそっち見てください。 移植はbatファイル書いてたら時間無くなりまし</description>
     </item>
     
   </channel>
