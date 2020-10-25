@@ -9,6 +9,7 @@ DefaultContentLanguage = "ja"
 SectionPagesMenu = "main"
 googleAnalytics = ""
 enableRobotsTXT = true
+hasCJKLanguage = true
 
 [Author]
   name = "XMLPro"
