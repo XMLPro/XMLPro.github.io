@@ -11,8 +11,8 @@ if [ $1 != "blogs" ] && [ $1 != "posts" ] && [ $1 != "news" ]; then
   exit 1
 fi
 
-filename=$(date "+%Y-%m-%d-%H%M").md
-hugo new $1/$filename
+filename=$(date "+%Y-%m-%d-%H%M")/index.md
+./hugo new $1/$filename
 echo "Congratulations!!"
 echo "content/$1/$filename Created!"
 echo "Edit and Deploy!"
