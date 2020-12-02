@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF on XMLPro</title>
+    <link>https://xmlpro.github.io/tags/ctf/</link>
+    <description>Recent content in CTF on XMLPro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trend Micro CTF 2020に出た話</title>
+      <link>https://xmlpro.github.io/posts/2020-10-13-1456/</link>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/posts/2020-10-13-1456/</guid>
+      <description>Trend Micro CTF 2020に出た話 はてブロに書いちゃった はてなブログに書いちゃったのでそっち見てください。 移植はbatファイル書いてたら時間無くなりまし</description>
+    </item>
+    
+  </channel>
+</rss>

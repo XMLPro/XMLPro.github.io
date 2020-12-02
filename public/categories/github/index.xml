@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on XMLPro</title>
+    <link>https://xmlpro.github.io/categories/github/</link>
+    <description>Recent content in GitHub on XMLPro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub の Security keys に色々追加した</title>
+      <link>https://xmlpro.github.io/blogs/2020-11-12-1257/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/blogs/2020-11-12-1257/</guid>
+      <description>どっかのサークル (ここではない) で部長やっている F0rell (@F0rell) です. いつもと名義が違うって？気にしないでください (は？). 気になる人はサークル内で k か</description>
+    </item>
+    
+  </channel>
+</rss>

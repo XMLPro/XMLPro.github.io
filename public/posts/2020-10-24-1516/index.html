@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FlutterのHybrid Compositionを使った話 - XMLPro</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="東京工科大学紅華祭アドベントカレンダー">
+		<meta property="og:title" content="FlutterのHybrid Compositionを使った話" />
+<meta property="og:description" content="東京工科大学紅華祭アドベントカレンダー" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xmlpro.github.io/posts/2020-10-24-1516/" />
+<meta property="article:published_time" content="2017-08-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-08-21T00:00:00+00:00" />
+
+		<meta itemprop="name" content="FlutterのHybrid Compositionを使った話">
+<meta itemprop="description" content="東京工科大学紅華祭アドベントカレンダー">
+<meta itemprop="datePublished" content="2017-08-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-08-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="5737">
+
+
+
+<meta itemprop="keywords" content="Flutter," />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="FlutterのHybrid Compositionを使った話"/>
+<meta name="twitter:description" content="東京工科大学紅華祭アドベントカレンダー"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-QWXBQV3SFD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T35HXQQ');</script>
+
+</head>
+<body class="body">
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T35HXQQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="XMLPro" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">XMLPro</div>
+					<div class="logo__tagline">東京工科大学プログラミングサークル</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">メニュー</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/blogs/">
+				
+				<span class="menu__text">Blogs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/posts/">
+				
+				<span class="menu__text">Posts</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">FlutterのHybrid Compositionを使った話</h1>
+			<p class="post__lead">Flutter組み込みのWidgetで済むならそれが一番いいと思う</p>
+			
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">目次</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#はじめに">はじめに</a></li>
+        <li><a href="#そもそもなんでネイティブのビューが必要になったの">そもそもなんでネイティブのビューが必要になったの？</a></li>
+        <li><a href="#hybrid-compositionとは">Hybrid Compositionとは</a></li>
+        <li><a href="#使い方">使い方</a></li>
+        <li><a href="#本題">本題</a></li>
+        <li><a href="#感想とか注意とか">感想とか、注意とか</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<h3 id="はじめに">はじめに</h3>
+<p>สวัสดีตอนเช้า🙏。みんなだいすき部長<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>の箱守由ですっ☆。今日はみんなと一緒にブログを書いていくよ！<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> みんなが何日目をやるとか決めてないからアドベントカレンダーと呼べないの…🥺ぴえん<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>今回はFlutterのhybrid-compositionに触れることがあったのでそれについて記事を書こうと思います。調べても情報もデモとなるソースコードもあまり見当たらなかったのでだれかの参考になれば幸いです。</p>
+<h3 id="そもそもなんでネイティブのビューが必要になったの">そもそもなんでネイティブのビューが必要になったの？</h3>
+<p>個人的にはFlutterはかなり使い勝手がよくほとんどFlutter組み込みのWidgetで問題ないと思っています。ただ、どうしても気に入らないのがテキストフィールドの日本語入力の挙動です。下の画像を見てください。</p>
+<figure class="center">
+    <img src="./flutter-textfield.png" width="320"/> <figcaption>
+            <h4>Flutter組み込みのTextField</h4>
+        </figcaption>
+</figure>
+
+<p>「ぶんかつへんかん」と入力した後、左へ移動キーを押してカーソルを移動させると変換範囲とFlutter上で表示される変換範囲が一致しなくなります。これはあまり直感的とは言えません。</p>
+<p>いろいろとFlutterのTextFieldのプロパティを見てみたのですが、ちょうどいい解決策が見つからず、<strong>EditText</strong>というAndroidネイティブのViewを使えば解決するのではないかと思いました。</p>
+<h3 id="hybrid-compositionとは">Hybrid Compositionとは</h3>
+<p>Hybrid Compositionとはandroid.view.ViewをFlutterのウィジットツリーに追加することでAndroidのネイティブビューを表示するためのしくみです。ウィジットツリーに組み込まれているので、キーボードハンドリングなどがうまく動いてくれます。</p>
+<p>Androidのネイティブビューを表示するためのものとしてAndroidViewというFlutterのウィジットを利用したバーチャルディスプレイというものがありますが、これはAndroidネイティブのビューの表示結果をFlutterのウィジットに貼り付けるイメージだと思います。ビューを貼り付けているだけなので、キーボードハンドリングがうまく動かないことが多いです。私もはじめはHybrid CompositionではなくAndroidViewを使ってネイティブキーボードを実装していたのですが、テキストフィールドをタッチしてもソフトウェアキーボードが出てくれなくて呆然としておりました。</p>
+<p>参考：<a href="https://flutter.dev/docs/development/platform-integration/platform-views">Flutter公式</a></p>
+<h3 id="使い方">使い方</h3>
+<p>上の参考リンクにのっているソースコードの解説をしていこうかなと思います。</p>
+<h4 id="flutterサイド">Flutterサイド</h4>
+<p>まず、Flutter側から始めます。</p>
+<p>以下をインポートして</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/foundation.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/gestures.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/rendering.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/services.dart&#39;</span>;
+</code></pre></div><p>Widgetのbuild()では以下を返します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart">Widget build(BuildContext context) {
+  <span style="color:#75715e">// This is used in the platform side to register the view.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> viewType <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;platform-view-type&gt;&#39;</span>;
+  <span style="color:#75715e">// Pass parameters to the platform side.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">dynamic</span><span style="color:#f92672">&gt;</span> creationParams <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">dynamic</span><span style="color:#f92672">&gt;</span>{};
+
+  <span style="color:#66d9ef">return</span> PlatformViewLink(
+    viewType: viewType,
+    surfaceFactory:
+        (BuildContext context, PlatformViewController controller) {
+      <span style="color:#66d9ef">return</span> AndroidViewSurface(
+        controller: controller,
+        gestureRecognizers: <span style="color:#66d9ef">const</span> <span style="color:#f92672">&lt;</span>Factory<span style="color:#f92672">&lt;</span>OneSequenceGestureRecognizer<span style="color:#f92672">&gt;&gt;</span>{},
+        hitTestBehavior: PlatformViewHitTestBehavior.opaque,
+      );
+    },
+    onCreatePlatformView: (PlatformViewCreationParams params) {
+      <span style="color:#66d9ef">return</span> PlatformViewsService.initSurfaceAndroidView(
+        id: params.id,
+        viewType: viewType,
+        layoutDirection: TextDirection.ltr,
+        creationParams: creationParams,
+        creationParamsCodec: StandardMessageCodec(),
+      )
+        ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
+        ..create();
+    },
+  );
+}
+</code></pre></div><p>では、上のソースコードの解説をしていきます。</p>
+<p>viewTypeというのはネイティブのビューを識別するための文字列です。任意の名前が使用可能です。</p>
+<p>PlatformViewLink()がFlutterに統合されたAndroidネイティブのビューを作成してくれているっぽいです。</p>
+<p>surfaceFactoryはFlutterのレイヤーツリーに組み込まれるレイヤを返す関数を設定してあげます。今回はAndroidネイティブのレイヤをツリーに追加したいので、AndroidViewSurfaceを利用しているってことっぽいです。gestureRecognizersはGestureRecognizerのFactoryのリストを渡してやります。ここに渡したGestureRecognizerのGestureの種類がAndroidネイティブのビューにも通知されるっぽいです。hitTestBehaviorはタッチ範囲に関する設定で、どういう使い方なのかは<a href="https://qiita.com/najeira/items/54e3cfff16c82318103d">こちら</a>が分かりやすいかもです。</p>
+<p>onCreatePlatformViewにはPlatformViewCreationParamsクラスを受け取ってPlatformViewControllerを返す関数を指定します。この関数で作られたControllerがsurfaceFactoryに渡されて、レイヤの作成に利用される。PlatformViewsService.initSurfaceAndroidViewがSurfaceAndroidViewControllerというPlatformViewControllerを継承したクラスを返しています。</p>
+<p>params.idにはこれから作られるAndroidネイティブビューのidが入っています。
+textDirectionはテキストの向きを決定し、creationPramsCodecはAndroidサイドにcreationParamsを送る前にエンコードするためのコーデックだそうです（調べてないのでよくわからん）。creationParamsは作成するネイティブビューに渡されて自由に使えます。（後のkotlinコードを参照）</p>
+<p>addOnPlatformViewCreatedListenerにparams.onPlatformViewCreatedが渡されていますが、このonPlatformViewCreatedは、PlatformViewLinkのsetStateを呼ぶだけの関数っぽいです。(実装は<a href="https://github.com/flutter/flutter/blob/720dff6a94bd054e82ec4bf84b5cb802bbc52ddd/packages/flutter/lib/src/widgets/platform_view.dart#L890">ここ</a>) setStateで_platformViewCreatedをtrueにしています。これがtrueになると、build()で返るウィジットがSizedBox.expand()から、Androidネイティブのレイヤが入ったFocusウィジットが返されるようになります。</p>
+<p>create()を呼ぶとSystemChannelを通してAndroidのビューが作成されて(_sendCreateMessage() <a href="https://github.com/flutter/flutter/blob/720dff6a94bd054e82ec4bf84b5cb802bbc52ddd/packages/flutter/lib/src/services/platform_views.dart#L1019">実装はここ</a>)、リスナーとして登録された関数を呼び出します。(<a href="https://github.com/flutter/flutter/blob/720dff6a94bd054e82ec4bf84b5cb802bbc52ddd/packages/flutter/lib/src/services/platform_views.dart#L740">ここ</a>が該当)</p>
+<p>長くなったので簡単にまとめ直すと、</p>
+<ol>
+<li>PlatformViewLinkを作ってやる</li>
+<li>PlatformViewLinkを作成すると、onCreatePlatformViewに設定した関数が呼ばれる。</li>
+<li>その呼ばれた関数ではAndroidネイティブのViewを作成し、作成が終わったらaddOnPlatformViewCreatedListener()で登録された関数を呼び出して(setStateを呼び出して)、PlatformViewLinkのbuild()の処理の流れを変える</li>
+<li>PlatformViewLinkのbuild()内で、surfaceFactoryを呼び出した際に返されるAndroidViewSurfaceをchildに持つFocusウィジットが作成され、それが表示される。</li>
+</ol>
+<p>こういう流れになります。うーん。これ、Flutter利用者に書かせるコードじゃないだろ&hellip;.</p>
+<h4 id="ネイティブサイド">ネイティブサイド</h4>
+<p>次にネイティブサイドのコードを載せます。これらのファイル置き場ですが、android/app/src/main/kotlin以下を探していくとMainActivity.ktというファイルが見つかると思います。そこに置いてください。</p>
+<p>NativeView.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin:NativeView.kt" data-lang="kotlin:NativeView.kt"><span style="color:#66d9ef">package</span> dev.flutter.example
+
+<span style="color:#66d9ef">import</span> android.content.Context
+<span style="color:#66d9ef">import</span> android.graphics.Color
+<span style="color:#66d9ef">import</span> android.view.View
+<span style="color:#66d9ef">import</span> android.widget.TextView
+<span style="color:#66d9ef">import</span> io.flutter.plugin.platform.PlatformView
+
+<span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NativeView</span>(context: Context, id: Int, creationParams: Map&lt;String?, Any?&gt;?) : PlatformView {
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> textView: TextView
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">getView</span>(): View {
+        <span style="color:#66d9ef">return</span> textView
+    }
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">dispose</span>() {}
+
+    <span style="color:#66d9ef">init</span> {
+        textView = TextView(context)
+        textView.textSize = <span style="color:#ae81ff">72f</span>
+        textView.setBackgroundColor(Color.rgb(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>))
+        textView.text = <span style="color:#e6db74">&#34;Rendered on a native Android view (id: </span><span style="color:#e6db74">$id</span><span style="color:#e6db74">)&#34;</span>
+    }
+}
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin:NativeViewFactory.kt" data-lang="kotlin:NativeViewFactory.kt"><span style="color:#66d9ef">package</span> dev.flutter.example
+
+<span style="color:#66d9ef">import</span> android.content.Context
+<span style="color:#66d9ef">import</span> android.view.View
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.BinaryMessenger
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.StandardMessageCodec
+<span style="color:#66d9ef">import</span> io.flutter.plugin.platform.PlatformView
+<span style="color:#66d9ef">import</span> io.flutter.plugin.platform.PlatformViewFactory
+
+<span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NativeViewFactory</span>(<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> messenger: BinaryMessenger, <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> containerView: View) : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">create</span>(context: Context, id: Int, args: Any?): PlatformView {
+        <span style="color:#66d9ef">val</span> creationParams = args <span style="color:#66d9ef">as</span> Map&lt;String?, Any?&gt;?
+        <span style="color:#66d9ef">return</span> NativeView(context, id, creationParams)
+    }
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin:MainActivity.kt" data-lang="kotlin:MainActivity.kt"><span style="color:#66d9ef">package</span> dev.flutter.example
+
+<span style="color:#66d9ef">import</span> io.flutter.embedding.android.FlutterActivity
+<span style="color:#66d9ef">import</span> io.flutter.embedding.engine.FlutterEngine
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> : FlutterActivity() {
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">configureFlutterEngine</span>(flutterEngine: FlutterEngine) {
+        flutterEngine
+                .platformViewsController
+                .registry
+                .registerViewFactory(<span style="color:#e6db74">&#34;&lt;platform-view-type&gt;&#34;</span>, NativeViewFactory())
+    }
+}
+</code></pre></div><p>ネイティブの方のコードはFlutterサイドに比べれば読みやすい気がしますね。FlutterサイドからviewTypeのビューを利用できるようにするには3つの手順を踏みます。</p>
+<ol>
+<li>PlatformViewクラスを継承したネイティブビューを作成する
+init等でAndroidネイティブのビューを作成し、getViewでそれを返すように設定する</li>
+<li>NativeViewを作成するFactoryを作成する</li>
+<li>MainActivityのconfigureFlutterEngine内でregisterViewFactoryを呼び出して、viewType（今回の例だと&quot;&lt;platform-view-type&gt;&quot;）とネイティブビューを紐づける。</li>
+</ol>
+<p>NativeViewFactoryにcreationParamsが渡ってきていますが、これがFlutterサイドで渡したcreationParamsです。NativeViewにこれを渡すことでネイティブビューでも利用ができます。</p>
+<h3 id="本題">本題</h3>
+<p>なんとなく流れが分かったので、実際に上のコードを使って変換範囲がきれいなネイティブのテキストフィールドを作成していきます。サンプルプロジェクトは(ここ)[https://github.com/hakomori64/hybrid-composition-textfield]に置いておきます。</p>
+<p>最初にDart側のコードです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dart" data-lang="dart"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:async&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/material.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/foundation.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/gestures.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/rendering.dart&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/services.dart&#39;</span>;
+
+
+<span style="color:#66d9ef">void</span> main() {
+  runApp(MyApp());
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyApp</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+  <span style="color:#75715e">// This widget is the root of your application.
+</span><span style="color:#75715e"></span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+  Widget build(BuildContext context) {
+    <span style="color:#66d9ef">return</span> MaterialApp(
+      title: <span style="color:#e6db74">&#39;TextField Demo&#39;</span>,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: TextFieldDemo(title: <span style="color:#e6db74">&#39;Flutter Text Field Demo&#39;</span>),
+    );
+  }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TextFieldDemo</span> <span style="color:#66d9ef">extends</span> StatefulWidget {
+  TextFieldDemo({Key key, <span style="color:#66d9ef">this</span>.title}) <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(key: key);
+
+  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> title;
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  _TextFieldDemoState createState() <span style="color:#f92672">=&gt;</span> _TextFieldDemoState();
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_TextFieldDemoState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>TextFieldDemo<span style="color:#f92672">&gt;</span> {
+
+  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> viewType <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;edit-text&#34;</span>;
+  Map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">dynamic</span><span style="color:#f92672">&gt;</span> creationParams <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span>, <span style="color:#66d9ef">dynamic</span><span style="color:#f92672">&gt;</span>{};
+  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> EventChannel _eventChannel <span style="color:#f92672">=</span> <span style="color:#66d9ef">const</span> EventChannel(<span style="color:#e6db74">&#34;events/edit-text&#34;</span>);
+  StreamSubscription _streamSubscription;
+  <span style="color:#66d9ef">String</span> text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+
+  <span style="color:#66d9ef">void</span> onTextChanged(<span style="color:#66d9ef">String</span> t) {
+    print(<span style="color:#e6db74">&#34;setState Called&#34;</span>);
+    setState(() {text <span style="color:#f92672">=</span> t;});
+  }
+
+  <span style="color:#66d9ef">void</span> _enableEventReceiver() {
+    _streamSubscription <span style="color:#f92672">=</span> _eventChannel.receiveBroadcastStream().listen(
+      (<span style="color:#66d9ef">dynamic</span> event) {
+        print(<span style="color:#e6db74">&#34;Received Event: </span><span style="color:#e6db74">$</span>event<span style="color:#e6db74">&#34;</span>);
+        setState(() {
+          text <span style="color:#f92672">=</span> event;
+        });
+      },
+      onError: (<span style="color:#66d9ef">dynamic</span> error) {
+        print(<span style="color:#e6db74">&#34;Received Error: </span><span style="color:#e6db74">${</span>error.message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>);
+      },
+      cancelOnError: <span style="color:#66d9ef">true</span>
+    );
+  }
+
+  <span style="color:#66d9ef">void</span> _disableEventReceiver() {
+    <span style="color:#66d9ef">if</span> (_streamSubscription <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+      _streamSubscription.cancel();
+      _streamSubscription <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    }
+  }
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  <span style="color:#66d9ef">void</span> initState() {
+    <span style="color:#66d9ef">super</span>.initState();
+    _enableEventReceiver();
+  }
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  <span style="color:#66d9ef">void</span> dispose() {
+    <span style="color:#66d9ef">super</span>.dispose();
+    _disableEventReceiver();
+  }
+
+  <span style="color:#960050;background-color:#1e0010">@</span>override
+  Widget build(BuildContext context) {
+
+    <span style="color:#66d9ef">return</span> Scaffold(
+      appBar: AppBar(
+        <span style="color:#75715e">// Here we take the value from the MyHomePage object that was created by
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// the App.build method, and use it to set our appbar title.
+</span><span style="color:#75715e"></span>        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(<span style="color:#ae81ff">20</span>),
+          child: PlatformViewLink(
+            viewType: viewType,
+            surfaceFactory: (BuildContext context, PlatformViewController controller) {
+              <span style="color:#66d9ef">return</span> AndroidViewSurface(
+                controller: controller,
+                gestureRecognizers: <span style="color:#66d9ef">const</span> <span style="color:#f92672">&lt;</span>Factory<span style="color:#f92672">&lt;</span>OneSequenceGestureRecognizer<span style="color:#f92672">&gt;&gt;</span>{},
+                hitTestBehavior: PlatformViewHitTestBehavior.opaque,
+              );
+            },
+            onCreatePlatformView: (PlatformViewCreationParams params) {
+              <span style="color:#66d9ef">return</span> PlatformViewsService.initSurfaceAndroidView(
+                id: params.id,
+                viewType: viewType,
+                layoutDirection: TextDirection.ltr,
+                creationParams: creationParams,
+                creationParamsCodec: StandardMessageCodec(),
+              )
+                ..addOnPlatformViewCreatedListener(params.onPlatformViewCreated)
+                ..create();
+            },
+          ),
+        )
+      ),
+    );
+  }
+}
+</code></pre></div><p>Hybrid Compositionの部分はほぼほぼ公式の通りです。今回は**&ldquo;edit-text&rdquo;**という名前でandroidネイティブのEditTextを返すPlatformViewを登録しています。上のコードではネイティブとのデータの受け渡しにEventChannelを使っています。EventChannelを通してEditTextのonTextChangedから入力されたテキストを受け取り_TextFieldDemoStateのtextに保存します。EventChannelの使い方に関しては(こちら)[https://qiita.com/kurun_pan/items/6d63ebf1e894d3620b20]を参考にさせていただきました。ありがとうございます。</p>
+<p>次にネイティブのコードです。</p>
+<p>MainActivity.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">package</span> com.example.textfield_demo
+
+<span style="color:#66d9ef">import</span> android.os.Handler
+<span style="color:#66d9ef">import</span> io.flutter.embedding.android.FlutterActivity
+<span style="color:#66d9ef">import</span> io.flutter.embedding.engine.FlutterEngine
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.EventChannel
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.EventChannel.EventSink
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.EventChannel.StreamHandler
+<span style="color:#66d9ef">import</span> io.flutter.plugins.GeneratedPluginRegistrant
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span>: FlutterActivity() {
+  <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">configureFlutterEngine</span>(flutterEngine: FlutterEngine) {
+    GeneratedPluginRegistrant.registerWith(flutterEngine)
+
+    flutterEngine
+        .platformViewsController
+        .registry
+        .registerViewFactory(<span style="color:#e6db74">&#34;edit-text&#34;</span>, EditTextFactory(flutterEngine.dartExecutor.binaryMessenger))
+
+    <span style="color:#66d9ef">var</span> channel: EventChannel = EventChannel(flutterEngine.dartExecutor.binaryMessenger, <span style="color:#e6db74">&#34;events/edit-text&#34;</span>)
+    channel.setStreamHandler(
+      <span style="color:#66d9ef">object</span>: StreamHandler {
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onListen</span>(arguments: Any?, events: EventSink) {
+          FlutterEditText.eventSink = events
+          Handler().postDelayed({
+            events.success(<span style="color:#e6db74">&#34;Android&#34;</span>)
+          }, <span style="color:#ae81ff">500</span>)
+        }
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onCancel</span>(arguments: Any?) {}
+      }
+    )
+  }
+}
+</code></pre></div><p>EditTextFactory.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">package</span> com.example.textfield_demo
+
+<span style="color:#66d9ef">import</span> android.content.Context
+<span style="color:#66d9ef">import</span> android.view.View
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.BinaryMessenger
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.StandardMessageCodec
+<span style="color:#66d9ef">import</span> io.flutter.plugin.platform.PlatformView
+<span style="color:#66d9ef">import</span> io.flutter.plugin.platform.PlatformViewFactory
+
+<span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EditTextFactory</span>(<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> messenger: BinaryMessenger) : PlatformViewFactory(StandardMessageCodec.INSTANCE) {
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">create</span>(context: Context, id: Int, args: Any?): PlatformView {
+        <span style="color:#66d9ef">val</span> creationParams = args <span style="color:#66d9ef">as</span> Map&lt;String?, Any?&gt;?
+        <span style="color:#66d9ef">return</span> FlutterEditText(context, id, creationParams)
+    }
+}
+
+</code></pre></div><p>FlutterEditText.kt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">package</span> com.example.textfield_demo
+
+<span style="color:#66d9ef">import</span> android.content.Context
+<span style="color:#66d9ef">import</span> android.graphics.Color
+<span style="color:#66d9ef">import</span> android.view.View
+<span style="color:#66d9ef">import</span> android.view.ViewGroup
+<span style="color:#66d9ef">import</span> android.widget.EditText
+<span style="color:#66d9ef">import</span> android.text.TextWatcher
+<span style="color:#66d9ef">import</span> android.text.Editable
+<span style="color:#66d9ef">import</span> io.flutter.plugin.common.EventChannel.EventSink
+<span style="color:#66d9ef">import</span> androidx.annotation.Nullable
+<span style="color:#66d9ef">import</span> io.flutter.plugin.platform.PlatformView
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CustomTextWatcher</span>: TextWatcher{
+  <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">beforeTextChanged</span>(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+  <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">afterTextChanged</span>(p0: Editable?) {}
+}
+
+<span style="color:#66d9ef">internal</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FlutterEditText</span>(context: Context, id: Int, <span style="color:#a6e22e">@Nullable</span> creationParams: Map&lt;String?, Any?&gt;?) : PlatformView {
+
+    <span style="color:#66d9ef">companion</span> <span style="color:#66d9ef">object</span> {
+      <span style="color:#66d9ef">var</span> eventSink: EventSink? = <span style="color:#66d9ef">null</span>
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">val</span> editTextLayout: ViewGroup
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> lastText: String = <span style="color:#e6db74">&#34;&#34;</span>
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">getView</span>(): View {
+        <span style="color:#66d9ef">return</span> editTextLayout
+    }
+
+    <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">dispose</span>() {}
+
+    <span style="color:#66d9ef">init</span> {
+      editTextLayout = (View.inflate(context, R.layout.flutter_edit_text, <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">as</span> ViewGroup)
+      <span style="color:#66d9ef">var</span> editText: EditText = editTextLayout.getChildAt(<span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">as</span> EditText
+      editText.addTextChangedListener(<span style="color:#66d9ef">object</span>: CustomTextWatcher{
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onTextChanged</span>(s: CharSequence, start: Int, before: Int, count: Int) {
+          <span style="color:#66d9ef">if</span> (!s.toString().equals(lastText)) {
+            eventSink<span style="color:#f92672">?.</span>success(s.toString())
+            lastText = s.toString()
+
+          }
+        }
+      })
+    }
+}
+</code></pre></div><p>Hybrid Compositionの部分についてはほとんど公式の通りですが、説明しなければいけない点がいくつかあります。</p>
+<p>一つ目がEventChannelの登録です。これはMainActivity内でdartサイドのイベントチャンネルと同じ名前で登録して、onListenが呼ばれるタイミングでFlutterEditTextに渡してあげます。</p>
+<p>二つ目がlayout機能の利用です。<code>View.inflate</code>を使うと、android/app/src/main/res/layout以下にあるxmlファイル内の記述からビューの作成がされます。該当ディレクトリにflutter_edit_text.xmlというファイルを作り、下のように記述してやります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span style="color:#a6e22e">xmlns:android=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+    <span style="color:#a6e22e">xmlns:app=</span><span style="color:#e6db74">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+    <span style="color:#a6e22e">xmlns:tools=</span><span style="color:#e6db74">&#34;http://schemas.android.com/tools&#34;</span>
+    <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+    <span style="color:#a6e22e">tools:context=</span><span style="color:#e6db74">&#34;.MainActivity&#34;</span>
+    <span style="color:#a6e22e">tools:showIn=</span><span style="color:#e6db74">&#34;@layout/flutter_edit_text&#34;</span><span style="color:#f92672">&gt;</span>
+
+    <span style="color:#f92672">&lt;EditText</span>
+        <span style="color:#a6e22e">android:id=</span><span style="color:#e6db74">&#34;@+id/flutter_edit_text&#34;</span>
+        <span style="color:#a6e22e">android:layout_width=</span><span style="color:#e6db74">&#34;match_parent&#34;</span>
+        <span style="color:#a6e22e">android:layout_height=</span><span style="color:#e6db74">&#34;wrap_content&#34;</span>
+        <span style="color:#a6e22e">android:textIsSelectable=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#a6e22e">android:inputType=</span><span style="color:#e6db74">&#34;textMultiLine&#34;</span>
+        <span style="color:#a6e22e">android:focusable=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#a6e22e">android:focusableInTouchMode=</span><span style="color:#e6db74">&#34;true&#34;</span>
+        <span style="color:#a6e22e">android:minLines=</span><span style="color:#e6db74">&#34;6&#34;</span>
+        <span style="color:#a6e22e">android:gravity=</span><span style="color:#e6db74">&#34;top&#34;</span>
+        <span style="color:#a6e22e">android:hint=</span><span style="color:#e6db74">&#34;Enter Something&#34;</span>
+    <span style="color:#f92672">/&gt;</span>
+
+<span style="color:#f92672">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</code></pre></div><p>showInのところで名前を決め、R.layout.flutter_edit_textでビューを作成できるようにします。これで、inflateを使ってこのConstraintLayoutが取得できるようになるので、FlutterEditTextではその子供にあたるEditTextを取得して設定を追加で行っています。</p>
+<p>最後が、EditTextにlistenerを登録してあげているところです。具体的にはこの辺ですね。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">      editText.addTextChangedListener(<span style="color:#66d9ef">object</span>: CustomTextWatcher{
+        <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">onTextChanged</span>(s: CharSequence, start: Int, before: Int, count: Int) {
+          <span style="color:#66d9ef">if</span> (!s.toString().equals(lastText)) {
+            eventSink<span style="color:#f92672">?.</span>success(s.toString())
+            lastText = s.toString()
+
+
+          }
+        }
+      })
+</code></pre></div><p>onTextChangedをオーバーライドして、変更後のテキストをEventChannelを通じて、Flutter側に通知しています。</p>
+<p>長くなりましたが、最終的にこうなります。</p>
+<figure class="center">
+    <img src="./native-text-field.gif" width="320"/> <figcaption>
+            <h4>AndroidネイティブのEditText</h4>
+        </figcaption>
+</figure>
+
+<p>やったぜ</p>
+<h3 id="感想とか注意とか">感想とか、注意とか</h3>
+<p>creationParamsを使えばFlutter側からMap形式で情報を情報を送れるので、必要なら利用してください。ただ、文字列とか整数値とかしか送れなかった気がします。Dartで書いたcallback関数とか送れないかなーと思って試してみたんですがダメでした。</p>
+<p>EditTextのメソッド（setTextとか）を呼び出したい！って場合はMethodChannel, EditTextでイベントが発生したらDartの処理を実行したいって時はEventChannelを使うのがいいような気がしました。なんかもっといい方法を知っている方がいらしたら教えていただきたいです。</p>
+<p>Hybrid Compositionはまだまだ新しい機能で情報も少ないのでかなり苦労しました。Flutterの組み込みWidgetで解決できるならそれが一番楽でいいなと思いました。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>2020年度XMLPro部長 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>東京工科大学紅華祭アドベントカレンダーということで記事を書いています <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>部員のだれが何日目をやるとか決めてないのでアドベントカレンダーとは呼べませんが <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/flutter/" rel="tag">Flutter</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="XMLPro avatar" src="/images/icon.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+	<div class="authorbox__description">
+		東京工科大学プログラミングサークルです。
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2020-10-13-1456/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;前の投稿</span>
+			<p class="pager__title">Trend Micro CTF 2020に出た話</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="検索..." value="" name="q" aria-label="検索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://xmlpro.github.io" />
+	</form>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">タグ</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ctf/" title="CTF">CTF</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flutter/" title="Flutter">Flutter</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/trend-micro/" title="Trend Micro">Trend Micro</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yubikey/" title="Yubikey">Yubikey</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 XMLPro.
+			<span class="footer__copyright-credits">このサイトは <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> と <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> テーマで生成されています。</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
