@@ -20,7 +20,7 @@ widgets: # サイドバーの表示項目
   - "search"
   - "recent"
   - "taglist"
-draft: true # 記事を公開する場合trueに設定してください
+draft: false # 記事を公開する場合falseに設定してください
 ---
 
 こんにちは，B4の[Inazuma110](https://twitter.com/Inazuma_110)です．
