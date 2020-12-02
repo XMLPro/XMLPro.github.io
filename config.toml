@@ -7,7 +7,7 @@ themesDir = "themes"
 
 DefaultContentLanguage = "ja"
 SectionPagesMenu = "main"
-googleAnalytics = ""
+googleAnalytics = "G-QWXBQV3SFD"
 enableRobotsTXT = true
 hasCJKLanguage = true
 
@@ -34,7 +34,6 @@ hasCJKLanguage = true
   mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
   mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
   googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"
-  googleAnalytics = "G-QWXBQV3SFD"
 
 [Params.style.vars]
   highlightColor = "#e22d30" # Override highlight color
