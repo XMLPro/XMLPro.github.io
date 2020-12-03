@@ -6,7 +6,25 @@
     <description>Recent content in Tags on XMLPro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neovim</title>
+      <link>https://xmlpro.github.io/tags/neovim/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/tags/neovim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://xmlpro.github.io/tags/vim/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Security</title>
       <link>https://xmlpro.github.io/tags/security/</link>

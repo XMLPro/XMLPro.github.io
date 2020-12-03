@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>(Neo)Vimでできるゲームの紹介 - XMLPro</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="(Neo)Vimでゲームしよう．">
+		<meta property="og:title" content="(Neo)Vimでできるゲームの紹介" />
+<meta property="og:description" content="(Neo)Vimでゲームしよう．" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xmlpro.github.io/posts/2020-10-06-1445/" />
+<meta property="article:published_time" content="2020-12-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-01T00:00:00+00:00" />
+
+		<meta itemprop="name" content="(Neo)Vimでできるゲームの紹介">
+<meta itemprop="description" content="(Neo)Vimでゲームしよう．">
+<meta itemprop="datePublished" content="2020-12-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-12-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1785">
+
+
+
+<meta itemprop="keywords" content="Vim,Neovim," />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(Neo)Vimでできるゲームの紹介"/>
+<meta name="twitter:description" content="(Neo)Vimでゲームしよう．"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-QWXBQV3SFD', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T35HXQQ');</script>
+
+</head>
+<body class="body">
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T35HXQQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="XMLPro" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">XMLPro</div>
+					<div class="logo__tagline">東京工科大学プログラミングサークル</div>
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">メニュー</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/blogs/">
+				
+				<span class="menu__text">Blogs</span>
+				
+			</a>
+		</li>
+		<li class="menu__item menu__item--active">
+			<a class="menu__link" href="/posts/">
+				
+				<span class="menu__text">Posts</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">(Neo)Vimでできるゲームの紹介</h1>
+			
+		</header><div class="content post__content clearfix">
+			<p>こんにちは，B4の<a href="https://twitter.com/Inazuma_110">Inazuma110</a>です．
+この記事ではVimやNeoVimでできるゲームを紹介します．
+講義で扱っただけのVimやそれを拡張するソフトウェアについて，「是非興味を持ってほしい」という気持ちで記事を書いてみました．</p>
+<h2 id="vimとは">Vimとは</h2>
+<p>最も有名と言っても過言ではない<strong>テキストエディタ</strong>です．
+テキストエディタというのは文字通り，一般には「テキストファイルの編集」に使われるソフトウェアです．
+もちろん，ゲームをプレイするためのソフトウェアではありません．</p>
+<p><del>(とは言え，Google ChromeというブラウザをOSにする企業や，emacsをOSと主張する人々がこの世にはいるのでVimをゲームプラットフォームとして扱うことはそれほど不自然では無いでしょう．)</del></p>
+<p>ちなみに，近年の東京工科大学では，1年生の「情報リテラシー演習」や2年生の「プロジェクト演習テーマB」でVimの使い方を学習するようです．
+2018年度まで，東京工科大学の講義ではemacsを扱うことが多かったです．<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+Vimを講義で使っただけの方に，Vimの魅力が少しでも伝われば幸いです．</p>
+<h2 id="先行研究">先行研究</h2>
+<p><a href="https://vim-jp.org/blog/2011/09/20/games.html">vim-jp.orgの記事</a>にて，すでに様々なゲームがまとめられています．
+本記事ではここにはないゲームを紹介していきます．</p>
+<h2 id="プラグインについて">プラグインについて</h2>
+<p>Vimでゲームをするプログラムは，多くの場合「Vimのプラグイン」という形で公開されています．
+Vimのプラグインというのは，Vimを拡張するソフトウェアのことです．</p>
+<h3 id="プラグインの導入">プラグインの導入</h3>
+<p>プラグインマネージャーと呼ばれるプラグイン管理専用のプラグインを使います．
+本記事では，私が普段から使っている<a href="https://github.com/Shougo/dein.vim">dein.vim</a>を用いますが，他にも<a href="https://github.com/junegunn/vim-plug">vim-plug</a>などが有名です．
+好きなものを利用してください．</p>
+<p>プラグインの具体的な導入方法については，各プラグインマネージャーのREADMEを読んでください．
+これらは英語で書かれていることが多いですが，Google翻訳や<a href="https://www.deepl.com/translator">deepl</a>を用いることで比較的簡単に翻訳できると思います．</p>
+<h2 id="ゲーム">ゲーム</h2>
+<p>以下のゲームはNeovim v0.4.3(一部Vim8.2.2077)で動作確認をしています．</p>
+<h3 id="vim-game-code-breakhttpsgithubcomjohngribvim-game-code-break"><a href="https://github.com/johngrib/vim-game-code-break">vim-game-code-break</a></h3>
+<p>Vimで開いたソースコードでブロック崩しを遊ぶことができます．
+<code>:VimGameCodeBreak</code>で現在開いてるファイルの文字をブロックに見立ててブロック崩しを始めます．</p>
+<p><img src="https://user-images.githubusercontent.com/1855714/27774457-7e001646-5fcd-11e7-9e90-c37eafefad9c.gif" alt="image"></p>
+<p>とても斬新な発想で面白いです．
+破壊したソースコードの内容が消えてしまうということはないので，安心してプレイできます．
+クソコードへのストレスをこのゲームで消し飛ばしましょう!!</p>
+<p>詳しい操作などや設定などは<a href="https://github.com/johngrib/vim-game-code-break">リポジトリ</a>のREADMEなどを参照してください．</p>
+<h3 id="vim-mariohttpsgithubcomrbtnnvim-mario"><a href="https://github.com/rbtnn/vim-mario">vim-mario</a></h3>
+<p><code>:Mario</code>でマリオが始まります(?)</p>
+<p><img src="https://camo.githubusercontent.com/ec99e0fdf7ae339ea6eae266066f37e24b4123ec/68747470733a2f2f7261772e6769746875622e636f6d2f7262746e6e2f6d6172696f2e76696d2f6d61737465722f6d6172696f2e676966" alt="image"></p>
+<p><strong>このプラグインは，<a href="https://github.com/rbtnn/vim-game_engine">vim-game_engine</a>に依存しているので，こちらのプラグインも忘れずに導入するようにしてください．</strong></p>
+<p>また，起動時にVimにゲーム画面が入り切らないことがあるので，文字の大きさは適宜調節してください．
+多くのターミナルはCtrl&ndash;(コントロールとハイフンの同時押し)で文字を小さくできると思います．)</p>
+<h3 id="vim-puyohttpsgithubcomrbtnnvim-puyo"><a href="https://github.com/rbtnn/vim-puyo">vim-puyo</a></h3>
+<p><code>:Puyo</code>でぷよぷよができます(?)
+こちらもvim-marioと同じくvim-game_engineに依存しているので，忘れず導入してください．</p>
+<p><img src="https://camo.githubusercontent.com/6c130d8f952f386e6dd206a01194d13cb8b9df30/68747470733a2f2f7261772e6769746875622e636f6d2f7262746e6e2f7075796f2e76696d2f6d61737465722f7075796f2e676966" alt="image"></p>
+<h4 id="注意-以降のゲームはneovimでは動きません"><strong>注意!!: 以降のゲームはNeovimでは動きません!!</strong></h4>
+<p>動作確認はVim8.2.2077で行いました．</p>
+<h3 id="killersheephttpsgithubcomvimkillersheep"><a href="https://github.com/vim/killersheep">Killersheep</a></h3>
+<p>Vim8.2で音声を再生する機能が実装されたと話題になっていました．
+と同時に，その機能を利用したゲームが突如公開され同じく話題になっていました．
+<code>:KillKillKill</code>でゲームが始まります．</p>
+<p>実際にプレイした動画をキャプチャしてみました．ゲームの音声がとてもユニークなのでよかったら音も聞いてみてください．
+(完全なキャプチャができていませんがお許しください)</p>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Vimでゲームをしました (ブログへの動画埋め込み用) <a href="https://t.co/B4ANfzC2Cd">pic.twitter.com/B4ANfzC2Cd</a></p>&mdash; Inazuma110 (@Inazuma_110) <a href="https://twitter.com/Inazuma_110/status/1333989025196122112?ref_src=twsrc%5Etfw">December 2, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>このゲームは結構やりこんでいたことがあって，全ステージをクリアしました．
+そんなに難易度が高いわけではないので，よかったらクリアを目指してみてください．</p>
+<p>また，こちらNeovimでは動かないので注意してください．</p>
+<h2 id="最後に">最後に</h2>
+<p>マリオやぷよぷよはゲーム機で遊んだほうがいいです．</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>期末テストでemacsのキーバインドが出題されたほどです． <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vim/" rel="tag">Vim</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/neovim/" rel="tag">Neovim</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="XMLPro avatar" src="/images/icon.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name"></span>
+	</div>
+	<div class="authorbox__description">
+		東京工科大学プログラミングサークルです。
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/2020-10-24-1516/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;前の投稿</span>
+			<p class="pager__title">FlutterのHybrid Compositionを使った話</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="検索..." value="" name="q" aria-label="検索...">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://xmlpro.github.io" />
+	</form>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">タグ</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/ctf/" title="CTF">CTF</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flutter/" title="Flutter">Flutter</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/neovim/" title="Neovim">Neovim</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/security/" title="Security">Security</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/trend-micro/" title="Trend Micro">Trend Micro</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vim/" title="Vim">Vim</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/yubikey/" title="Yubikey">Yubikey</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 XMLPro.
+			<span class="footer__copyright-credits">このサイトは <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> と <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> テーマで生成されています。</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
