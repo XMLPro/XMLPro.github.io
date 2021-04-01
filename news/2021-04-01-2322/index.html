@@ -4,25 +4,26 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GitHub の Security keys に色々追加した - XMLPro</title>
+	<title>新1年生への挑戦状 - XMLPro</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Yubikey 買って放置してたので軽く触った話と &#43;α">
-		<meta property="og:title" content="GitHub の Security keys に色々追加した" />
-<meta property="og:description" content="Yubikey 買って放置してたので軽く触った話と &#43;α" />
+	<meta name="description" content="2021年度新入生歓迎会特設ページです">
+		<meta property="og:title" content="新1年生への挑戦状" />
+<meta property="og:description" content="2021年度新入生歓迎会特設ページです" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xmlpro.github.io/blogs/2020-11-12-1257/" /><meta property="article:section" content="blogs" />
-<meta property="article:published_time" content="2020-11-13T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-11-13T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://xmlpro.github.io/news/2021-04-01-2322/" /><meta property="og:image" content="https://xmlpro.github.io/news/2021-04-01-2322/thumbnail.png"/><meta property="article:section" content="news" />
 
 
-		<meta itemprop="name" content="GitHub の Security keys に色々追加した">
-<meta itemprop="description" content="Yubikey 買って放置してたので軽く触った話と &#43;α"><meta itemprop="datePublished" content="2020-11-13T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-11-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="806">
-<meta itemprop="keywords" content="Security,Yubikey," />
-		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GitHub の Security keys に色々追加した"/>
-<meta name="twitter:description" content="Yubikey 買って放置してたので軽く触った話と &#43;α"/>
+
+
+		<meta itemprop="name" content="新1年生への挑戦状">
+<meta itemprop="description" content="2021年度新入生歓迎会特設ページです">
+
+<meta itemprop="wordCount" content="385"><meta itemprop="image" content="https://xmlpro.github.io/news/2021-04-01-2322/thumbnail.png">
+<meta itemprop="keywords" content="CTF,Crypto," />
+		<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://xmlpro.github.io/news/2021-04-01-2322/thumbnail.png"/>
+<meta name="twitter:title" content="新1年生への挑戦状"/>
+<meta name="twitter:description" content="2021年度新入生歓迎会特設ページです"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -76,14 +77,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<span class="menu__btn-title" tabindex="-1">メニュー</span>
 	</button>
 	<ul class="menu__list">
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="/blogs/">
 				
 				<span class="menu__text">Blogs</span>
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/news/">
 				
 				<span class="menu__text">News</span>
@@ -108,10 +109,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">GitHub の Security keys に色々追加した</h1>
-			<p class="post__lead">Windows の PIN, Macbook の Touch ID, Yubikey の 3 つを追加します.</p>
+			<h1 class="post__title">新1年生への挑戦状</h1>
+			<p class="post__lead">新入生歓迎会用の特設サイトです</p>
 			
 		</header>
+		<figure class="post__thumbnail">
+			<img src="/thumbnail.png" alt="新1年生への挑戦状">
+		</figure>
 <div class="post__toc toc">
 	<div class="toc__title">目次</div>
 	<div class="toc__menu">
@@ -119,48 +123,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<p>どっかのサークル (ここではない) で部長やっている F0rell (<a href="https://twitter.com/f0rell">@F0rell</a>) です.</p>
-<p>いつもと名義が違うって？気にしないでください (は？). 気になる人はサークル内で k から始まるユーザで探してください, おそらくその人です.</p>
-<p>紅華祭2020アドベントカレンダーというアドベントしてないカレンダーの記事です.</p>
-<h1 id="背景">背景</h1>
-<p>今年の始めぐらいに Yubikey を買ったけれども, 特に使わず半年ぐらい経過してしまったので, 記事作成用のネタとして使うために GitHub の Security keys に追加した.
-Security keys 項目は Settings &gt; Account security の赤枠部分です.</p>
-<figure class="center">
-    <img src="img1.png" width="640"/> <figcaption>
-            <h4>Security keys の場所</h4>
-        </figcaption>
-</figure>
-
-<p>Security keys には自宅の Windows 機, Macbook Pro 用, Yubikey 用の 3 つを登録しているので, 3 security keys と出てます.</p>
-<h1 id="yubikey-とは">Yubikey とは</h1>
-<p>Yubico 社が開発した認証デバイスです. 超小型ながら FIDO U2F や OTP 生成機能などのたくさんの機能があるとともに, 耐久性もすごいらしいです (公式が言ってた).
-Yubikey それ自体はキーボードデバイスとして認識されます. そのため, すべての OS で利用可能らしいです.
-FIDO U2F とは大雑把に言うと, 2 段階認証の別実装っぽい何かです.
-ちなみに, 生体認証 (指紋認証など) は FIDO UAF と言うらしい.</p>
-<p>参考: <a href="https://fidoalliance.org/%E4%BB%95%E6%A7%98%E6%A6%82%E8%A6%81/?lang=ja">https://fidoalliance.org/仕様概要/?lang=ja</a></p>
-<h1 id="登録する">登録する</h1>
-<p>さて, 登録しようとなるのですが, Windows の場合, Windows Hello の PIN 認証が優先されてしまうため, Yubikey の登録ができません.
-なので, Ubuntu を入れたラップトップから追加しました.
-ついでに, Macbook Pro の Touch ID も追加しました.
-一度, Yubikey を登録すると, ログイン時の二要素認証で, Yubikey を使って認証を通すことができます.</p>
-<figure class="center">
-    <img src="img2.png" width="640"/> <figcaption>
-            <h4>ここでセキュリティ キーを選択</h4>
-        </figcaption>
-</figure>
-
-<figure class="center">
-    <img src="img3.png" width="640"/> <figcaption>
-            <h4>認証画面</h4>
-        </figcaption>
-</figure>
-
-<p>ここで, USB に挿した Yubikey をタッチすると, 認証が成功します.</p>
-<h1 id="まとめ">まとめ</h1>
-<p>以上が Yubikey を使ったりして, GitHub の Secirity keys を登録する話です.
-WebAuthn による認証に対応してるサイト, 例えば <a href="https://1password.com/jp/">1password</a> といったサイトが今回の FIDO U2F 認証方式が使えます.
-必ずしも全部の使えるわけではないので, 対応してるかはそれぞれサイトを見てください.</p>
-<p>Yubikey は FIDO U2F 以外に色々機能あるのでそこらへん今度は触りたいですね.</p>
+			<h1 id="新入生歓迎会用特設サイト">新入生歓迎会用特設サイト</h1>
+<p>新入生のみなさんこんにちは！XMLProに興味を持っていただきありがとうございます。</p>
+<p>私たちのサークルに興味を持つような、将来の凄腕エンジニアの皆さんに楽しんでいただくために問題をご用意しました。ぜひともダウンロードして、解いてみてください。
+解答は<code>The flag is xmlpro{~~~}</code>という形式で得られます。見つけた解答は、<code>~~~</code>の部分を以下のGoogleフォームに提出してください。</p>
+<p>解いたからといって特になにか特典があるというわけではございません。んー。じゃあ、なにかお菓子でもおごります。</p>
+<p>奮ってご参加ください！みなさんのご解答を楽しみにしております！</p>
+<p><a href="./crypted.zip">ファイルダウンロード</a></p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScuwfWfUawpbp-2O3XZslW1CwPj8Xbi3RekqZeE6fdIxsIc5A/viewform">解答提出フォーム</a></p>
+<p>解答・解説は新入生歓迎会から五日後の4/7(水)にこのWebサイト上に公開します。
+その際はTwitterでも告知しますので、ぜひともフォローお願いします！</p>
+<p>Twitter: <a href="https://twitter.com/xmlpro_tut">https://twitter.com/xmlpro_tut</a>
+Discord: <a href="https://discord.gg/jrJ3zWprt2">https://discord.gg/jrJ3zWprt2</a></p>
 
 		</div>
 		<footer class="post__footer">
@@ -169,10 +143,10 @@ WebAuthn による認証に対応してるサイト, 例えば <a href="https://
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/security/" rel="tag">Security</a>
+			<a class="tags__link btn" href="/tags/ctf/" rel="tag">CTF</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/yubikey/" rel="tag">Yubikey</a>
+			<a class="tags__link btn" href="/tags/crypto/" rel="tag">Crypto</a>
 		</li>
 	</ul>
 </div>
@@ -180,17 +154,6 @@ WebAuthn による認証に対応してるサイト, 例えば <a href="https://
 	</article>
 </main>
 
-<div class="authorbox clearfix">
-	<figure class="authorbox__avatar">
-		<img alt="XMLPro avatar" src="/images/icon.png" class="avatar" height="90" width="90">
-	</figure>
-	<div class="authorbox__header">
-		<span class="authorbox__name"></span>
-	</div>
-	<div class="authorbox__description">
-		東京工科大学プログラミングサークルです。
-	</div>
-</div>
 
 
 
