@@ -8,7 +8,7 @@ tags:
   - "CTF"
   - "Crypto"
 
-thumbnail: "./thumbnail.png" # サムネイルのurl staticからの相対パスを指定してください
+thumbnail: "images/2021-04-01-2322/thumbnail.png" # サムネイルのurl staticからの相対パスを指定してください
 lead: "新入生歓迎会用の特設サイトです" # リード文
 comments: true
 authorbox: false
