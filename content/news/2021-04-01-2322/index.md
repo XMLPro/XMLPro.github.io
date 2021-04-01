@@ -34,7 +34,7 @@ draft: false # 記事を公開する場合falseに設定してください
 
 奮ってご参加ください！みなさんのご解答を楽しみにしております！
 
-[ファイルダウンロード](./crypted.zip)
+[ファイルダウンロード](./ctf.zip)
 
 [解答提出フォーム](https://docs.google.com/forms/d/e/1FAIpQLScuwfWfUawpbp-2O3XZslW1CwPj8Xbi3RekqZeE6fdIxsIc5A/viewform)
 
