@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="新1年生への挑戦状">
 <meta itemprop="description" content="2021年度新入生歓迎会特設ページです">
 
-<meta itemprop="wordCount" content="385">
+<meta itemprop="wordCount" content="612">
 <meta itemprop="keywords" content="CTF,Crypto," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="新1年生への挑戦状"/>
@@ -122,18 +122,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h1 id="新入生歓迎会用特設サイト">新入生歓迎会用特設サイト</h1>
+			<style>
+.acd-check{
+    display: none;
+}
+.acd-label{
+    background: #333;
+    color: #fff;
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px;
+}
+.acd-content{
+    border: 1px solid #333;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: 40px;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+</style>
+<h1 id="新入生歓迎会用特設サイト">新入生歓迎会用特設サイト</h1>
 <p>新入生のみなさんこんにちは！XMLProに興味を持っていただきありがとうございます。</p>
 <p>私たちのサークルに興味を持つような、将来の凄腕エンジニアの皆さんに楽しんでいただくために問題をご用意しました。ぜひともダウンロードして、解いてみてください。
-解答は<code>The flag is xmlpro{~~~}</code>という形式で得られます。見つけた解答は、<code>~~~</code>の部分を以下のGoogleフォームに提出してください。</p>
-<p>解いたからといって特になにか特典があるというわけではございません。んー。じゃあ、なにかお菓子でもおごります。</p>
+全部で2か所に隠されていますよ？
+解答は<code>xmlpro{~~~}</code>という形式で得られます。見つけた解答は、<code>xmlpro{~~~}</code>あるいは<code>~~~</code>の部分を以下のGoogleフォームに提出してください。</p>
+<p>解いたからといって特になにか特典があるというわけではございません。
+んー。じゃあ、ICPCの時にモンスターでもおごります。</p>
 <p>奮ってご参加ください！みなさんのご解答を楽しみにしております！</p>
 <p><a href="./ctf.zip">ファイルダウンロード</a></p>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScuwfWfUawpbp-2O3XZslW1CwPj8Xbi3RekqZeE6fdIxsIc5A/viewform">解答提出フォーム</a></p>
-<p>解答・解説は新入生歓迎会から五日後の4/7(水)にこのWebサイト上に公開します。
+<p>解答・解説は新入生歓迎会から五日後の4/7(水)にこのWebサイト上へ公開します。
 その際はTwitterでも告知しますので、ぜひともフォローお願いします！</p>
 <p>Twitter: <a href="https://twitter.com/xmlpro_tut">https://twitter.com/xmlpro_tut</a>
 Discord: <a href="https://discord.gg/jrJ3zWprt2">https://discord.gg/jrJ3zWprt2</a></p>
+<h1 id="ctf問題のヒント">CTF問題のヒント</h1>
+<p>以下は問題のヒントです。
+ヒントなんかいらねえ！！自力で解けるやい！！！って方は閲覧しない方がいいです。</p>
+<input id="acd-check1" class="acd-check" type="checkbox">
+<label class="acd-label" for="acd-check1">Forensicsのヒント</label>
+<div class="acd-content">
+    <p>zipファイルのどこかに隠されているみたいですよ？</p>
+</div>
+<input id="acd-check2" class="acd-check" type="checkbox">
+<label class="acd-label" for="acd-check2">Cryptographyのヒント</label>
+<div class="acd-content">
+    <p>解凍した先のテキストファイルの最後の文字に`=`が見えますね...？</p>
+</div>
 
 		</div>
 		<footer class="post__footer">
