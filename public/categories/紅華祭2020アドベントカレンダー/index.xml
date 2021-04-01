@@ -6,7 +6,16 @@
     <description>Recent content in 紅華祭2020アドベントカレンダー on XMLPro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/categories/%E7%B4%85%E8%8F%AF%E7%A5%AD2020%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/categories/%E7%B4%85%E8%8F%AF%E7%A5%AD2020%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(Neo)Vimでできるゲームの紹介</title>
+      <link>https://xmlpro.github.io/posts/2020-10-06-1445/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/posts/2020-10-06-1445/</guid>
+      <description>こんにちは，B4のInazuma110です． この記事ではVimやNeoVimでできるゲームを紹介します． 講義で扱っただけのVimやそれを拡張</description>
+    </item>
+    
     <item>
       <title>GitHub の Security keys に色々追加した</title>
       <link>https://xmlpro.github.io/blogs/2020-11-12-1257/</link>

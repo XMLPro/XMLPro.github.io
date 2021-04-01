@@ -4,20 +4,62 @@
   
   <url>
     <loc>https://xmlpro.github.io/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xmlpro.github.io/blogs/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
+    <loc>https://xmlpro.github.io/posts/2020-10-06-1445/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://xmlpro.github.io/categories/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/tags/neovim/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/posts/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/tags/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/tags/vim/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/categories/%E7%B4%85%E8%8F%AF%E7%A5%AD2020%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/</loc>
+    <lastmod>2020-12-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/blogs/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -45,21 +87,7 @@
   </url>
   
   <url>
-    <loc>https://xmlpro.github.io/tags/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xmlpro.github.io/tags/yubikey/</loc>
-    <lastmod>2020-11-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xmlpro.github.io/categories/%E7%B4%85%E8%8F%AF%E7%A5%AD2020%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/</loc>
     <lastmod>2020-11-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -94,13 +122,6 @@
   </url>
   
   <url>
-    <loc>https://xmlpro.github.io/posts/</loc>
-    <lastmod>2017-08-21T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://xmlpro.github.io/tags/trend-micro/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -110,6 +131,30 @@
   <url>
     <loc>https://xmlpro.github.io/posts/2020-10-13-1456/</loc>
     <lastmod>2017-08-21T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/tags/crypto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/news/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/news/2021-04-01-2322/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xmlpro.github.io/categories/%E6%96%B0%E5%85%A5%E7%94%9F%E6%AD%93%E8%BF%8E%E4%BC%9A2021/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
