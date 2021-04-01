@@ -47,6 +47,6 @@ description: "東京工科大学 プログラミングサークル"
 
 ---
 
-<span class="f4 lh-copy">コロナウイルス感染症の影響により、現在は活動をオンラインで行っています。活動時間は月曜、火曜、木曜の21:00です。</span>
+<span class="f4 lh-copy">コロナウイルス感染症の影響により、4/13(火)までは活動をオンライン(discord)で行っています。活動時間は月曜、火曜、木曜の21:00~です。</span>
 
 [Discordへ](https://discord.gg/hFKnsrwH7r)
