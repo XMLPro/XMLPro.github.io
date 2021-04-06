@@ -20,7 +20,7 @@ widgets: # サイドバーの表示項目
   - "search"
   - "recent"
   - "taglist"
-draft: false # 記事を公開する場合falseに設定してください
+draft: false
 ---
 
 # 新1年生への挑戦状の解答・解説
