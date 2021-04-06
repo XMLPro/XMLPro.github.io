@@ -16,7 +16,7 @@ pager: true
 toc: true
 mathjax: true
 sidebar: "right"
-widgets: # サイドバーの表示項目
+widgets:
   - "search"
   - "recent"
   - "taglist"
