@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on XMLPro</title>
+    <link>https://xmlpro.github.io/tags/vim/</link>
+    <description>Recent content in Vim on XMLPro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(Neo)Vimでできるゲームの紹介</title>
+      <link>https://xmlpro.github.io/posts/2020-10-06-1445/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/posts/2020-10-06-1445/</guid>
+      <description>こんにちは，B4のInazuma110です． この記事ではVimやNeoVimでできるゲームを紹介します． 講義で扱っただけのVimやそれを拡張</description>
+    </item>
+    
+  </channel>
+</rss>

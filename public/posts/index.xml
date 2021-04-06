@@ -6,7 +6,16 @@
     <description>Recent content in Posts on XMLPro</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Mon, 21 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(Neo)Vimでできるゲームの紹介</title>
+      <link>https://xmlpro.github.io/posts/2020-10-06-1445/</link>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/posts/2020-10-06-1445/</guid>
+      <description>こんにちは，B4のInazuma110です． この記事ではVimやNeoVimでできるゲームを紹介します． 講義で扱っただけのVimやそれを拡張</description>
+    </item>
+    
     <item>
       <title>FlutterのHybrid Compositionを使った話</title>
       <link>https://xmlpro.github.io/posts/2020-10-24-1516/</link>
