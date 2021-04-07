@@ -5,14 +5,24 @@
     <link>https://xmlpro.github.io/news/</link>
     <description>Recent content in News on XMLPro</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-JP</language><atom:link href="https://xmlpro.github.io/news/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-JP</language>
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xmlpro.github.io/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>新1年生への挑戦状の解答・解説</title>
+      <link>https://xmlpro.github.io/news/2021-04-07-0737/</link>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xmlpro.github.io/news/2021-04-07-0737/</guid>
+      <description>新1年生への挑戦状の解答・解説 みなさんこの度は2021年新入生歓迎会にご参加いただきありがとうございました！ 新1年生への挑戦状と題して、CT</description>
+    </item>
+    
     <item>
       <title>新1年生への挑戦状</title>
       <link>https://xmlpro.github.io/news/2021-04-01-2322/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://xmlpro.github.io/news/2021-04-01-2322/</guid>
-      <description>.acd-check{ display: none; } .acd-label{ background: #333; color: #fff; display: block; margin-bottom: 1px; padding: 10px; } .acd-content{ border: 1px solid #333; height: 0; opacity: 0; padding: 0 10px; transition: .5s; visibility: hidden; } .acd-check:checked + .acd-label + .acd-content{ height: 40px; opacity: 1; padding: 10px; visibility: visible; } 新入生歓迎会用特設サイト 新入生のみなさんこんに</description>
+      <description>新入生歓迎会用特設サイト 新入生のみなさんこんにちは！XMLProに興味を持っていただきありがとうございます。 私たちのサークルに興味を持つよう</description>
     </item>
     
   </channel>

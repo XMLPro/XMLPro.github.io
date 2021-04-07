@@ -4,25 +4,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Trend Micro CTF 2020に出た話 - XMLPro</title>
+	<title>新1年生への挑戦状の解答・解説 - XMLPro</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="MikanerがTrend Micro CTFに惨敗した話のURLがただ貼ってあるだけの記事">
-		<meta property="og:title" content="Trend Micro CTF 2020に出た話" />
-<meta property="og:description" content="MikanerがTrend Micro CTFに惨敗した話のURLがただ貼ってあるだけの記事" />
+	<meta name="description" content="2021年新入生歓迎会の問題の解答・解説です">
+		<meta property="og:title" content="新1年生への挑戦状の解答・解説" />
+<meta property="og:description" content="2021年新入生歓迎会の問題の解答・解説です" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xmlpro.github.io/posts/2020-10-13-1456/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2017-08-21T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2017-08-21T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://xmlpro.github.io/news/2021-04-07-0737/" /><meta property="article:section" content="news" />
+<meta property="article:published_time" content="2021-04-07T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-07T00:00:00&#43;00:00" />
 
 
-		<meta itemprop="name" content="Trend Micro CTF 2020に出た話">
-<meta itemprop="description" content="MikanerがTrend Micro CTFに惨敗した話のURLがただ貼ってあるだけの記事"><meta itemprop="datePublished" content="2017-08-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-08-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="90">
-<meta itemprop="keywords" content="CTF,Trend Micro," />
+		<meta itemprop="name" content="新1年生への挑戦状の解答・解説">
+<meta itemprop="description" content="2021年新入生歓迎会の問題の解答・解説です"><meta itemprop="datePublished" content="2021-04-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-04-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1151">
+<meta itemprop="keywords" content="CTF,Crypto," />
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Trend Micro CTF 2020に出た話"/>
-<meta name="twitter:description" content="MikanerがTrend Micro CTFに惨敗した話のURLがただ貼ってあるだけの記事"/>
+<meta name="twitter:title" content="新1年生への挑戦状の解答・解説"/>
+<meta name="twitter:description" content="2021年新入生歓迎会の問題の解答・解説です"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -83,14 +83,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				
 			</a>
 		</li>
-		<li class="menu__item">
+		<li class="menu__item menu__item--active">
 			<a class="menu__link" href="/news/">
 				
 				<span class="menu__text">News</span>
 				
 			</a>
 		</li>
-		<li class="menu__item menu__item--active">
+		<li class="menu__item">
 			<a class="menu__link" href="/posts/">
 				
 				<span class="menu__text">Posts</span>
@@ -108,8 +108,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Trend Micro CTF 2020に出た話</h1>
-			<p class="post__lead">MikanerがTrend Micro CTFに惨敗した話のURLがただ貼ってあるだけの記事</p>
+			<h1 class="post__title">新1年生への挑戦状の解答・解説</h1>
+			<p class="post__lead">2021年新入生歓迎会の問題の解答・解説です</p>
 			
 		</header>
 <div class="post__toc toc">
@@ -117,17 +117,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#はてブロに書いちゃった">はてブロに書いちゃった</a></li>
+    <li>
+      <ul>
+        <li><a href="#forensics">Forensics</a></li>
+        <li><a href="#crypto">crypto</a></li>
+        <li><a href="#最後に">最後に</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	</div>
 </div>
 <div class="content post__content clearfix">
-			<h1 id="trend-micro-ctf-2020に出た話">Trend Micro CTF 2020に出た話</h1>
-<h2 id="はてブロに書いちゃった">はてブロに書いちゃった</h2>
-<p>はてなブログに書いちゃったのでそっち見てください。
-移植はbatファイル書いてたら時間無くなりました。</p>
-<p><a href="https://mikaner.hatenablog.com/entry/2020/10/06/170634">Trend Micro CTF 2020に出た話 - はてなブログ</a></p>
+			<h1 id="新1年生への挑戦状の解答解説">新1年生への挑戦状の解答・解説</h1>
+<p>みなさんこの度は2021年新入生歓迎会にご参加いただきありがとうございました！
+新1年生への挑戦状と題して、CTFの問題をホストしておりました。以下から解けます。
+<a href="https://xmlpro.github.io/news/2021-04-01-2322/">https://xmlpro.github.io/news/2021-04-01-2322/</a></p>
+<p>今日はその解答、解説をしようと思います。</p>
+<h3 id="forensics">Forensics</h3>
+<p>zipファイルにはコメントが付けられます。zipinfoやzipnoteコマンドを使うことで閲覧できます。</p>
+<p><img src="./answer1.png" alt=""></p>
+<p>したがって<code>Welc0me_t0_CTFW0r1d</code>が答えとなります。</p>
+<h3 id="crypto">crypto</h3>
+<p>zipファイルを解凍して出てくるテキストはbase64というエンコード方式でエンコードされた文字列です。
+したがって、base64でデコードしてやればいいです。
+ちなみに合計14回base64でエンコードされています。ひたすらデコードします。
+cyberchefというオンラインで使える便利なツールがあるので自分はそれを利用しています。
+<a href="https://gchq.github.io/CyberChef/">https://gchq.github.io/CyberChef/</a></p>
+<p>14回base64すると以下のような文字列が出てきます。</p>
+<pre><code>Pbatenghyngvbaf!!!
+Gur synt vf kzyceb{kzyce0_4j3f0z3_uNpx3e}
+
+ようこそKZYCebへ！
+KZYCebは技術好きが集まるサークルです。オンラインで集まって競技プログラミングをしたりしています。
+「プログラミングおもしろそう！」「Unpxreになりたい！」
+そんな人とぜひとも活動したいなと思っています！
+あなたの今のスキルは問いません。熱い気持ちだけお持ちになっていらしてください！
+
+詳細は以下のサイトから
+KZYCeb: uggcf://kzyceb.tvguho.vb
+
+ご連絡は以下から
+GjvggreのQZ、もしくはQvfpbeqの招待リンクからサーバーに入り、管理者もしくは在学生ロールがついているユーザーにお声がけください
+Gjvggre: uggcf://gjvggre.pbz/kzyceb_ghg
+Qvfpbeq: uggcf://qvfpbeq.tt/weW3mJceg2
+</code></pre><p>ここまで来ればあともう1歩です。上の文は英字だけ判読不能になっています。これはシーザー暗号というアルファベットを13字進めるという暗号方式です。したがってアルファベットを13字進めるだけでもとに戻せます。戻したものが以下になります。</p>
+<pre><code>Congratulations!!!
+The flag is xmlpro{xmlpr0_4w3s0m3_hAck3r}
+
+ようこそXMLProへ！
+XMLProは技術好きが集まるサークルです。オンラインで集まって競技プログラミングをしたりしています。
+「プログラミングおもしろそう！」「Hackerになりたい！」
+そんな人とぜひとも活動したいなと思っています！
+あなたの今のスキルは問いません。熱い気持ちだけお持ちになっていらしてください！
+
+詳細は以下のサイトから
+XMLPro: https://xmlpro.github.io
+
+ご連絡は以下から
+TwitterのDM、もしくはDiscordの招待リンクからサーバーに入り、管理者もしくは在学生ロールがついているユーザーにお声がけください
+Twitter: https://twitter.com/xmlpro_tut
+Discord: https://discord.gg/jrJ3zWprt2
+</code></pre><p>したがってフラグは<code>xmlpr0_4w3s0m3_hAck3r</code>です。</p>
+<h3 id="最後に">最後に</h3>
+<p>改めまして参加とご解答ありがとうございました。
+XMLProではCTFを活動の一環として行っています。もっといろんな問題に触れてみたいという人はぜひともXMLProにいらしてください！</p>
 
 		</div>
 		<footer class="post__footer">
@@ -139,7 +193,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a class="tags__link btn" href="/tags/ctf/" rel="tag">CTF</a>
 		</li>
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/trend-micro/" rel="tag">Trend Micro</a>
+			<a class="tags__link btn" href="/tags/crypto/" rel="tag">Crypto</a>
 		</li>
 	</ul>
 </div>
@@ -147,23 +201,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</article>
 </main>
 
-<div class="authorbox clearfix">
-	<figure class="authorbox__avatar">
-		<img alt="XMLPro avatar" src="/images/icon.png" class="avatar" height="90" width="90">
-	</figure>
-	<div class="authorbox__header">
-		<span class="authorbox__name"></span>
-	</div>
-	<div class="authorbox__description">
-		東京工科大学プログラミングサークルです。
-	</div>
-</div>
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/posts/2020-10-24-1516/" rel="next">
-			<span class="pager__subtitle">次の投稿&thinsp;»</span>
-			<p class="pager__title">FlutterのHybrid Compositionを使った話</p>
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/news/2021-04-01-2322/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;前の投稿</span>
+			<p class="pager__title">新1年生への挑戦状</p>
 		</a>
 	</div>
 </nav>
