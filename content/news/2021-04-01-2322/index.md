@@ -22,32 +22,6 @@ widgets: # サイドバーの表示項目
   - "taglist"
 draft: false # 記事を公開する場合falseに設定してください
 ---
-<style>
-.acd-check{
-    display: none;
-}
-.acd-label{
-    background: #333;
-    color: #fff;
-    display: block;
-    margin-bottom: 1px;
-    padding: 10px;
-}
-.acd-content{
-    border: 1px solid #333;
-    height: 0;
-    opacity: 0;
-    padding: 0 10px;
-    transition: .5s;
-    visibility: hidden;
-}
-.acd-check:checked + .acd-label + .acd-content{
-    height: 40px;
-    opacity: 1;
-    padding: 10px;
-    visibility: visible;
-}
-</style>
 # 新入生歓迎会用特設サイト
 
 新入生のみなさんこんにちは！XMLProに興味を持っていただきありがとうございます。
@@ -75,6 +49,32 @@ Discord: https://discord.gg/jrJ3zWprt2
 以下は問題のヒントです。
 ヒントなんかいらねえ！！自力で解けるやい！！！って方は閲覧しない方がいいです。
 
+<style>
+.acd-check{
+    display: none;
+}
+.acd-label{
+    background: #333;
+    color: #fff;
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px;
+}
+.acd-content{
+    border: 1px solid #333;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: 40px;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+</style>
 <input id="acd-check1" class="acd-check" type="checkbox">
 <label class="acd-label" for="acd-check1">Forensicsのヒント</label>
 <div class="acd-content">

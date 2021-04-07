@@ -11,7 +11,7 @@ tags:
 thumbnail: "" # サムネイルのurl staticからの相対パスを指定してください
 lead: "2021年新入生歓迎会の問題の解答・解説です" # リード文
 comments: true
-authorbox: true
+authorbox: false
 pager: true
 toc: true
 mathjax: true
