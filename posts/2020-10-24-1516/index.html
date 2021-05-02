@@ -18,7 +18,7 @@
 		<meta itemprop="name" content="FlutterのHybrid Compositionを使った話">
 <meta itemprop="description" content="東京工科大学紅華祭アドベントカレンダー"><meta itemprop="datePublished" content="2017-08-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-08-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="5737">
+<meta itemprop="wordCount" content="5800">
 <meta itemprop="keywords" content="Flutter," />
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="FlutterのHybrid Compositionを使った話"/>
@@ -137,8 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>今回はFlutterのhybrid-compositionに触れることがあったのでそれについて記事を書こうと思います。調べても情報もデモとなるソースコードもあまり見当たらなかったのでだれかの参考になれば幸いです。</p>
 <h3 id="そもそもなんでネイティブのビューが必要になったの">そもそもなんでネイティブのビューが必要になったの？</h3>
 <p>個人的にはFlutterはかなり使い勝手がよくほとんどFlutter組み込みのWidgetで問題ないと思っています。ただ、どうしても気に入らないのがテキストフィールドの日本語入力の挙動です。下の画像を見てください。</p>
-<figure class="center">
-    <img src="./flutter-textfield.png" width="320"/> <figcaption>
+<figure class="center"><img src="./flutter-textfield.png" width="320"/><figcaption>
             <h4>Flutter組み込みのTextField</h4>
         </figcaption>
 </figure>
@@ -534,8 +533,7 @@ init等でAndroidネイティブのビューを作成し、getViewでそれを�
       })
 </code></pre></div><p>onTextChangedをオーバーライドして、変更後のテキストをEventChannelを通じて、Flutter側に通知しています。</p>
 <p>長くなりましたが、最終的にこうなります。</p>
-<figure class="center">
-    <img src="./native-text-field.gif" width="320"/> <figcaption>
+<figure class="center"><img src="./native-text-field.gif" width="320"/><figcaption>
             <h4>AndroidネイティブのEditText</h4>
         </figcaption>
 </figure>
@@ -549,13 +547,13 @@ init等でAndroidネイティブのビューを作成し、getViewでそれを�
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>2020年度XMLPro部長 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>2020年度XMLPro部長&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>東京工科大学紅華祭アドベントカレンダーということで記事を書いています <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>東京工科大学紅華祭アドベントカレンダーということで記事を書いています&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>部員のだれが何日目をやるとか決めてないのでアドベントカレンダーとは呼べませんが <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>部員のだれが何日目をやるとか決めてないのでアドベントカレンダーとは呼べませんが&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
