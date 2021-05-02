@@ -37,7 +37,7 @@ zipファイルにはコメントが付けられます。zipinfoやzipnoteコマ
 
 ![](./answer1.png)
 
-したがって`Welc0me_t0_CTFW0r1d`が答えとなります。
+したがって`We1c0me_t0_CTFW0r1d`が答えとなります。
 
 ### crypto
 
